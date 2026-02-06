@@ -9,7 +9,7 @@ export function About() {
         <div className="flex-[1.5] space-y-6">
           <h2 className="mb-6 text-2xl">About</h2>
 
-          <div className="space-y-5">
+          <div className="space-y-2">
             <p>
               I'm a Computer Engineer from Addis Ababa, Ethiopia. I got interested in
               technology when I was about 14, even though access to resources was
@@ -42,7 +42,7 @@ export function About() {
         {/* Profile Image Area */}
         <div className="relative flex-1 flex justify-center">
           {/* Background Crosshair effect */}
-          <div className="absolute inset-0 scale-125 opacity-20 pointer-events-none flex items-center justify-center">
+          <div className="absolute inset-0 scale-125 opacity-30 pointer-events-none flex items-center justify-center">
             <Image
               src="/linesBackground.svg"
               alt="background grid"
@@ -55,7 +55,7 @@ export function About() {
           {/* Optimized Image Container */}
           <div className="relative -mt-2 h-[10.7rem] w-[10.7rem] overflow-hidden rounded-full border border-white/10 md:h-[12.6rem] md:w-[12.6rem]">
             <Image
-              src="/final.JPG"
+              src="/mine1.png"
               alt="photo of eyasu"
               fill // Use fill for better control in Next.js
               className="object-cover " // object-top prevents cutting off the head
