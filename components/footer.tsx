@@ -7,13 +7,13 @@ import { CustomDivider } from "./customDivide";
 const socials = [
   {
     name: "GitHub",
-    url: "https://github.com/",
+    url: "https://github.com/eyasuk",
     color: "#ffffff",
     hoverColor: "#181717",
   },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/",
+    url: "https://www.linkedin.com/in/eyasu-kibru-6151b61ab/",
     color: "#0A66C2",
     hoverColor: "#0A66C2",
   },
@@ -25,13 +25,13 @@ const socials = [
   },
   {
     name: "X",
-    url: "https://x.com/",
+    url: "https://x.com/Eyasu_kga",
     color: "#ffffff",
     hoverColor: "#000000",
   },
   {
     name: "Upwork",
-    url: "https://www.upwork.com/",
+    url: "https://www.upwork.com/freelancers/~0120aad2c2c79f5935",
     color: "#14A800",
     hoverColor: "#14A800",
   },
