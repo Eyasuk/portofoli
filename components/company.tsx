@@ -48,14 +48,14 @@ export function Company() {
     <section className="w-full mt-16">
       <CustomDivider />
 
-      <div className="relative mx-auto w-full max-w-5xl border-l border-white/10">
-        <div className="px-6 py-12 md:px-12">
+      <div className="relative mx-auto w-full max-w-5xl border-l-0 border-white/10 md:border-l">
+        <div className="ml-4 border-l border-white/10 px-6 py-12 md:ml-0 md:border-l-0 md:px-12">
           <h2 className="mb-12 text-2xl">Worked in</h2>
 
           <div className="flex flex-col gap-20">
             {experienceData.map((job, index) => (
               <div key={index} className="relative pl-8 pt-6">
-                <div className="absolute -top-8 left-0 md:-left-20">
+                <div className="absolute -top-8 -left-7 flex -translate-x-2 items-center gap-2 lg:-left-16 xl:-left-20">
                   <div className="z-10 whitespace-nowrap rounded-full border border-white/20 bg-[#111214] px-4 py-1.5 text-xs text-gray-300">
                     {job.date}
                   </div>
