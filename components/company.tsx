@@ -6,7 +6,7 @@ const experienceData = [
   {
     date: "September 2025 - Present",
     company: "Warka Fitness",
-    logo: "/warka1.png", // Replace with your path
+    logo: "/warka1.png",
     link: "warkafitness.com",
     description: "Co Founded and lead developer at Warka Fitness (warkafitness.com), helping build Ethiopia's largest platform for fitness courses, meal planning, and influencer-led programs.",
     width: 60,
@@ -46,15 +46,12 @@ const experienceData = [
 export function Company() {
   return (
     <section className="w-full mt-16">
-      {/* 1. Top Divider */}
       <CustomDivider />
 
-      {/* 2. Content Wrapper - This div's border touches the dividers */}
       <div className="relative mx-auto w-full max-w-5xl border-l border-white/10">
         <div className="px-6 py-12 md:px-12">
           <h2 className="mb-12 text-2xl">Worked in</h2>
 
-          {/* 3. Timeline Items */}
           <div className="flex flex-col gap-20">
             {experienceData.map((job, index) => (
               <div key={index} className="relative pl-8 pt-6">
@@ -64,13 +61,11 @@ export function Company() {
                   </div>
                 </div>
 
-                {/* Company Header */}
                 <div className="mb-6 flex items-center gap-4">
                   <NextImage src={job.logo} width={job.width} height={job.height} alt={`${job.company} logo`} />
                   <h3 className="text-lg">{job.company}</h3>
                 </div>
 
-                {/* Content */}
                 <div className="max-w-2xl">
                   {job.description && <p>{job.description}</p>}
                   {job.points && (
