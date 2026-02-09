@@ -5,8 +5,8 @@
   --foreground: #1f242b;
   --text-body: #2f343c;
   --text-heading: #111318;
-  --accent: #2f6fbe;
-  --accent-soft: #6fa3e6;
+  --accent: #6fa3e6;
+  --accent-soft: #9bc1f0;
 }
 
 @theme inline {
@@ -22,8 +22,8 @@
     --foreground: #eceff3;
     --text-body: #c2c7cf;
     --text-heading: #f6f8fb;
-    --accent: #2f6fbe;
-    --accent-soft: #6fa3e6;
+    --accent: #6fa3e6;
+    --accent-soft: #9bc1f0;
   }
 }
 

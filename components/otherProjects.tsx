@@ -18,22 +18,24 @@ export function OtherProjects() {
       <h2 className="mb-12 text-2xl">Other projects</h2>
       <div className="mb-16 grid grid-cols-1 justify-items-center gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {[
-          { name: 'Semayi labs', href: '#' },
-          { name: 'Ethio index', href: '#' },
-          { name: 'Btbc.org', href: '#' },
-          { name: 'btc wallet', href: '#' }
-        ].map(proj => (
+          { name: "Semayi Labs", href: "https://semayi.dev" },
+          { name: "Ethio index", href: "#" },
+          { name: "BTBC.org", href: "https://btbc.org" },
+          { name: "btc wallet", href: "#" }
+        ].map((proj) => (
           <a
             key={proj.name}
             href={proj.href}
-            className="w-full max-w-xs rounded-lg border border-white/15 px-8 py-2 text-center text-white transition-colors hover:border-white/40 hover:bg-white/10"
+            className="w-full max-w-xs rounded-lg border border-white/15 px-8 py-2 text-center text-[var(--accent)] transition-colors hover:border-white/40 hover:bg-white/10 hover:underline hover:underline-offset-4"
           >
             {proj.name}
           </a>
         ))}
         <a
-          href="#"
-          className="flex w-full max-w-xs items-center justify-center gap-2 text-white transition-colors hover:text-[#6fa3e6]"
+          href="https://github.com/eyasuk"
+          target="_blank"
+          rel="noreferrer"
+          className="flex w-full max-w-xs items-center justify-center gap-2 text-[var(--accent)] transition-colors hover:underline hover:underline-offset-4"
         >
           more on github
           <ArrowUpRight className="h-4 w-4" />

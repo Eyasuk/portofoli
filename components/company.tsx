@@ -7,7 +7,7 @@ const experienceData = [
     date: "September 2025 - Present",
     company: "Warka Fitness",
     logo: "/warka1.png",
-    link: "warkafitness.com",
+    link: "https://warkafitness.com",
     description: "Co Founded and lead developer at Warka Fitness (warkafitness.com), helping build Ethiopia's largest platform for fitness courses, meal planning, and influencer-led programs.",
     width: 60,
     height: 60,
@@ -16,6 +16,7 @@ const experienceData = [
     date: "Jun 2022 - Aug 2022 & Dec 2023 - Jul 2024",
     company: "Solicy.net",
     logo: "/solicy_logo_new.png",
+    link: "https://solicy.net",
     width: 40,
     height: 40,
     points: [
@@ -32,7 +33,7 @@ const experienceData = [
       {
         title: "DeliverEnd – Secure Peer-to-Peer Delivery & Logistics Mobile App",
         text: "Made meaningful backend contributions, including API development and integration, to a logistics application that enables safe, contactless item delivery for online marketplace transactions.",
-        link: "DeliverEnd on App Store"
+        link: "https://apps.apple.com/us/app/deliverend/id1449106896"
       },
       {
         title: "ZeepUp – Premium Food Delivery & Ordering Platform",
@@ -63,7 +64,20 @@ export function Company() {
 
                 <div className="mb-6 flex items-center gap-4">
                   <NextImage src={job.logo} width={job.width} height={job.height} alt={`${job.company} logo`} />
-                  <h3 className="text-lg">{job.company}</h3>
+                  <h3 className="text-lg">
+                    {job.link ? (
+                      <a
+                        href={job.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-[var(--accent)] decoration-[var(--accent)] hover:underline hover:underline-offset-4"
+                      >
+                        {job.company}
+                      </a>
+                    ) : (
+                      job.company
+                    )}
+                  </h3>
                 </div>
 
                 <div className="max-w-2xl">
@@ -73,8 +87,21 @@ export function Company() {
                       {job.points.map((point, i) => (
                         <li key={i} className="relative pl-6">
                           <span className="absolute left-0 top-2.5 h-1.5 w-1.5 rounded-full bg-zinc-600"></span>
-                          <p className="font-medium text-white">{point.title}</p>
-                          <p className="mt-1">{point.text}</p>
+                          <p>
+                            {point.link ? (
+                              <a
+                                href={point.link}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="font-medium text-[var(--accent)] decoration-[var(--accent)] hover:underline hover:underline-offset-4"
+                              >
+                                {point.title}
+                              </a>
+                            ) : (
+                              <span className="font-medium text-white">{point.title}</span>
+                            )}{" "}
+                            - {point.text}
+                          </p>
                         </li>
                       ))}
                     </ul>
