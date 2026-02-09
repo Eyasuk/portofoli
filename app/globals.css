@@ -3,8 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #1f242b;
-  --text-body: #2f343c;
-  --text-heading: #111318;
+  --text-body: #3a3f47;
+  --text-heading: #0d0f13;
   --accent: #6fa3e6;
   --accent-soft: #9bc1f0;
 }
@@ -12,16 +12,17 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-lato);
-  --font-heading: var(--font-poppins);
+  --font-sans: var(--font-geist-sans);
+  --font-heading: var(--font-geist-pixel-triangle);
+  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0e0f11;
     --foreground: #eceff3;
-    --text-body: #c2c7cf;
-    --text-heading: #f6f8fb;
+    --text-body: #d9dde3;
+    --text-heading: #fbfcfe;
     --accent: #6fa3e6;
     --accent-soft: #9bc1f0;
   }
@@ -30,7 +31,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-lato), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   font-size: 16px;
   line-height: 1.65;
 }
@@ -42,9 +43,14 @@ h4,
 h5,
 h6 {
   color: var(--text-heading);
-  font-family: var(--font-poppins), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-geist-pixel-triangle), system-ui, -apple-system, sans-serif;
   font-weight: 700;
   line-height: 1.25;
+}
+
+code,
+pre {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 p,
@@ -52,3 +58,5 @@ li {
   color: var(--text-body);
   font-size: 1rem;
 }
+
+
