@@ -48,13 +48,15 @@ export function About() {
             />
           </div>
 
-          <div className="relative -mt-2 h-[10.7rem] w-[10.7rem] overflow-hidden rounded-full border border-white/10 md:h-[12.6rem] md:w-[12.6rem]">
+          <div className=" relative -mt-2 h-[10.7rem] w-[10.7rem] overflow-hidden rounded-full border border-white/10 md:h-[12.6rem] md:w-[12.6rem]">
             <Image
               src="/mine1.png"
               alt="photo of eyasu"
               fill
               className="object-cover "
             />
+            <div className="pixel-matrix" aria-hidden="true" />
+            <div className="matrix-shimmer" aria-hidden="true" />
           </div>
         </div>
 
