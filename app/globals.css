@@ -1,39 +1,90 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #1f242b;
-  --text-body: #3a3f47;
-  --text-heading: #0d0f13;
-  --accent: #6fa3e6;
-  --accent-soft: #9bc1f0;
+/*
+ * Every colour on this site comes from an Omarchy theme's colors.toml.
+ * `--fg-dim` and `--link` are chosen per theme to clear 4.5:1 against that
+ * theme's background; several of the raw accents do not.
+ */
+[data-theme="ethiopia"] {
+  --bg: #262019;
+  --bg-deep: #1e1914;
+  --surface: #3b3227;
+  --fg: #e7d3b1;
+  --fg-dim: #a08a6b;
+  --fg-bright: #f5e6c8;
+  --accent: #d9a441;
+  --link: #d9a441;
+  --glow: #efc05c;
+  --border: rgba(231, 211, 177, 0.14);
+  --border-strong: rgba(231, 211, 177, 0.32);
+}
+
+[data-theme="osaka-jade"] {
+  --bg: #111c18;
+  --bg-deep: #0c1512;
+  --surface: #23372b;
+  --fg: #c1c497;
+  --fg-dim: #8f9a80;
+  --fg-bright: #f7e8b2;
+  --accent: #509475;
+  --link: #81b8a8;
+  --glow: #8cd3cb;
+  --border: rgba(193, 196, 151, 0.14);
+  --border-strong: rgba(193, 196, 151, 0.32);
+}
+
+[data-theme="miasma"] {
+  --bg: #222222;
+  --bg-deep: #191919;
+  --surface: #2c2c2c;
+  --fg: #c2c2b0;
+  --fg-dim: #9a9a8c;
+  --fg-bright: #c2c2b0;
+  --accent: #78824b;
+  --link: #c9a554;
+  --glow: #c9a554;
+  --border: rgba(194, 194, 176, 0.14);
+  --border-strong: rgba(194, 194, 176, 0.32);
+}
+
+:root,
+[data-theme="solitude"] {
+  --bg: #101315;
+  --bg-deep: #0c0e10;
+  --surface: #343d41;
+  --fg: #cacccc;
+  --fg-dim: #8b9298;
+  --fg-bright: #a5aeb4;
+  --accent: #798186;
+  --link: #a5aeb4;
+  --glow: #a5aeb4;
+  --border: rgba(202, 204, 204, 0.14);
+  --border-strong: rgba(202, 204, 204, 0.32);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-bg: var(--bg);
+  --color-bg-deep: var(--bg-deep);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-fg-dim: var(--fg-dim);
+  --color-fg-bright: var(--fg-bright);
+  --color-accent: var(--accent);
+  --color-link: var(--link);
+  --color-edge: var(--border);
+  --color-edge-strong: var(--border-strong);
   --font-sans: var(--font-geist-sans);
   --font-heading: var(--font-geist-pixel-triangle);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0e0f11;
-    --foreground: #eceff3;
-    --text-body: #d9dde3;
-    --text-heading: #fbfcfe;
-    --accent: #6fa3e6;
-    --accent-soft: #9bc1f0;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--bg);
+  color: var(--fg);
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   font-size: 16px;
   line-height: 1.65;
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 h1,
@@ -42,7 +93,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--text-heading);
+  color: var(--fg-bright);
   font-family: var(--font-geist-pixel-triangle), system-ui, -apple-system, sans-serif;
   font-weight: 700;
   line-height: 1.25;
@@ -55,8 +106,12 @@ pre {
 
 p,
 li {
-  color: var(--text-body);
+  color: var(--fg);
   font-size: 1rem;
 }
 
-
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
+}

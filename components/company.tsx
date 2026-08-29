@@ -4,7 +4,7 @@ import NextImage from "next/image";
 
 const experienceData = [
   {
-    date: "September 2025 - Present",
+    date: "September 2025 to Present",
     company: "Warka Fitness",
     logo: "/warka1.png",
     link: "https://warkafitness.com",
@@ -13,7 +13,7 @@ const experienceData = [
     height: 60,
   },
   {
-    date: "Jun 2022 - Aug 2022 & Dec 2023 - Jul 2024",
+    date: "Jun 2022 to Aug 2022 & Dec 2023 to Jul 2024",
     company: "Solicy.net",
     logo: "/solicy_logo_new.png",
     link: "https://solicy.net",
@@ -26,17 +26,17 @@ const experienceData = [
         link: "https://solicy.net"
       },
       {
-        title: "BTicino Home – Electronics & Home Equipment E-commerce Platform",
+        title: "BTicino Home: Electronics & Home Equipment E-commerce Platform",
         text: "Played a key role in system design, architecture, and implementation of a robust online store specializing in electrical installation equipment and home automation products (Bticino brand).",
         link: "https://www.bticinohome.am"
       },
       {
-        title: "DeliverEnd – Secure Peer-to-Peer Delivery & Logistics Mobile App",
+        title: "DeliverEnd: Secure Peer-to-Peer Delivery & Logistics Mobile App",
         text: "Made meaningful backend contributions, including API development and integration, to a logistics application that enables safe, contactless item delivery for online marketplace transactions.",
         link: "https://apps.apple.com/us/app/deliverend/id1449106896"
       },
       {
-        title: "ZeepUp – Premium Food Delivery & Ordering Platform",
+        title: "ZeepUp: Premium Food Delivery & Ordering Platform",
         text: "Contributed substantially to backend development (APIs, business logic, integrations) for a high-quality food delivery service focused on curated menus, chef specialties, and sustainable ingredients.",
         link: "https://www.zeepup.com"
       }
@@ -49,15 +49,15 @@ export function Company() {
     <section className="w-full mt-16">
       <CustomDivider />
 
-      <div className="relative mx-auto w-full max-w-5xl border-l-0 border-white/10 md:border-l">
-        <div className="ml-4 border-l border-white/10 px-6 py-12 md:ml-0 md:border-l-0 md:px-12">
+      <div className="relative mx-auto w-full max-w-5xl border-l-0 border-[var(--border)] md:border-l">
+        <div className="ml-4 border-l border-[var(--border)] px-6 py-12 md:ml-0 md:border-l-0 md:px-12">
           <h2 className="mb-12 text-2xl">Worked in</h2>
 
           <div className="flex flex-col gap-20">
             {experienceData.map((job, index) => (
               <div key={index} className="relative pl-8 pt-6">
                 <div className="absolute -top-8 -left-7 flex -translate-x-2 items-center gap-2 lg:-left-16 xl:-left-20">
-                  <div className="z-10 whitespace-nowrap rounded-full border border-white/20 bg-[#111214] px-4 py-1.5 text-xs text-gray-300">
+                  <div className="z-10 whitespace-nowrap rounded-full border border-[var(--border-strong)] bg-[var(--bg-deep)] px-4 py-1.5 text-xs text-[var(--fg-dim)]">
                     {job.date}
                   </div>
                 </div>
@@ -70,7 +70,7 @@ export function Company() {
                         href={job.link}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-[var(--accent)] decoration-[var(--accent)] hover:underline hover:underline-offset-4"
+                        className="text-[var(--link)] decoration-[var(--link)] hover:underline hover:underline-offset-4"
                       >
                         {job.company}
                       </a>
@@ -86,21 +86,21 @@ export function Company() {
                     <ul className="mt-6 space-y-6">
                       {job.points.map((point, i) => (
                         <li key={i} className="relative pl-6">
-                          <span className="absolute left-0 top-2.5 h-1.5 w-1.5 rounded-full bg-zinc-600"></span>
+                          <span className="absolute left-0 top-2.5 h-1.5 w-1.5 rounded-full bg-[var(--accent)]"></span>
                           <p>
                             {point.link ? (
                               <a
                                 href={point.link}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="font-medium text-[var(--accent)] decoration-[var(--accent)] hover:underline hover:underline-offset-4"
+                                className="font-medium text-[var(--link)] decoration-[var(--link)] hover:underline hover:underline-offset-4"
                               >
                                 {point.title}
                               </a>
                             ) : (
-                              <span className="font-medium text-white">{point.title}</span>
-                            )}{" "}
-                            - {point.text}
+                              <span className="font-medium text-[var(--fg-bright)]">{point.title}</span>
+                            )}
+                            {`. ${point.text}`}
                           </p>
                         </li>
                       ))}
