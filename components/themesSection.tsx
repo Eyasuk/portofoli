@@ -28,7 +28,7 @@ function InstallCommand({ repo }: { repo: string }) {
   }
 
   return (
-    <div className="mt-4 flex items-start gap-2 rounded-md border border-[var(--border)] bg-[var(--bg-deep)] px-3 py-2">
+    <div className="relative z-10 mt-4 flex items-start gap-2 rounded-md border border-[var(--border)] bg-[var(--bg-deep)] px-3 py-2">
       <code className="min-w-0 flex-1 break-all text-xs leading-relaxed text-[var(--fg-dim)]">
         <span className="text-[var(--link)]">$</span> {command}
       </code>
@@ -78,10 +78,10 @@ export function ThemesSection() {
             return (
               <article
                 key={theme.id}
-                className={`flex flex-col rounded-lg border p-5 transition-colors ${
+                className={`relative flex flex-col rounded-lg border p-5 transition-colors ${
                   isActive
                     ? "border-[var(--border-strong)] bg-[var(--surface)]/40"
-                    : "border-[var(--border)]"
+                    : "cursor-pointer border-[var(--border)] hover:border-[var(--border-strong)] hover:bg-[var(--surface)]/20"
                 }`}
               >
                 <div className="mb-3 flex items-center gap-3">
@@ -108,11 +108,17 @@ export function ThemesSection() {
 
                 {theme.repo && <InstallCommand repo={theme.repo} />}
 
+                {/*
+                  The ::after stretches this button over the whole card, so a
+                  click anywhere on the card applies the theme while the real
+                  control stays a single focusable button. The install command
+                  sits on z-10 to keep its copy button reachable above it.
+                */}
                 <button
                   type="button"
                   onClick={() => setTheme(theme.id)}
                   disabled={isActive}
-                  className="mt-4 self-start text-sm font-medium text-[var(--link)] transition-opacity hover:underline hover:underline-offset-4 disabled:opacity-50 disabled:no-underline"
+                  className="mt-4 self-start text-sm font-medium text-[var(--link)] transition-opacity after:absolute after:inset-0 after:rounded-lg after:content-[''] hover:underline hover:underline-offset-4 disabled:opacity-50 disabled:no-underline"
                 >
                   {isActive ? "Currently applied" : `Preview ${theme.label}`}
                 </button>

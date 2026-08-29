@@ -4,8 +4,12 @@
  * Every colour on this site comes from an Omarchy theme's colors.toml.
  * `--fg-dim` and `--link` are chosen per theme to clear 4.5:1 against that
  * theme's background; several of the raw accents do not.
+ *
+ * The `html` prefix on each theme block is load bearing. A bare
+ * [data-theme="x"] scores the same as the :root fallback below it, so source
+ * order would hand every theme solitude's palette. Keep the element qualifier.
  */
-[data-theme="ethiopia"] {
+html[data-theme="ethiopia"] {
   --bg: #262019;
   --bg-deep: #1e1914;
   --surface: #3b3227;
@@ -19,7 +23,7 @@
   --border-strong: rgba(231, 211, 177, 0.32);
 }
 
-[data-theme="osaka-jade"] {
+html[data-theme="osaka-jade"] {
   --bg: #111c18;
   --bg-deep: #0c1512;
   --surface: #23372b;
@@ -33,7 +37,7 @@
   --border-strong: rgba(193, 196, 151, 0.32);
 }
 
-[data-theme="miasma"] {
+html[data-theme="miasma"] {
   --bg: #222222;
   --bg-deep: #191919;
   --surface: #2c2c2c;
@@ -48,7 +52,7 @@
 }
 
 :root,
-[data-theme="solitude"] {
+html[data-theme="solitude"] {
   --bg: #101315;
   --bg-deep: #0c0e10;
   --surface: #343d41;
