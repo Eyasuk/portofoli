@@ -20,7 +20,7 @@ export const themes: Theme[] = [
     label: "Ethiopia",
     mine: true,
     note: "Gondarine church murals and Orthodox icon painting. Parchment, church gold, terracotta and indigo over an umber ground.",
-    repo: "https://github.com/eyasuk/omarchy-ethiopia",
+    repo: "https://github.com/eyasuk/omarchy-ethiopia-theme",
     swatches: ["#d9a441", "#e06547", "#d17f36", "#849755", "#649896", "#6291bd", "#be7690"],
   },
   {
